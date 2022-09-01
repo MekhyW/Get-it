@@ -159,12 +159,12 @@ body {
 
 .card-title{
   font-family: 'Permanent Marker', cursive;
-  font-size: x-large;
+  font-size: large;
 }
 
 .card-content{
   font-family: 'Permanent Marker', cursive;
-  font-size: large;
+  font-size: medium;
   display: flex;
   justify-content: center;
   align-items: center;
