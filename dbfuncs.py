@@ -17,7 +17,7 @@ class Note:
 
 conn = sqlite3.connect('db.sqlite', check_same_thread=False)
 run_query(conn, "CREATE TABLE IF NOT EXISTS note (id INTEGER PRIMARY KEY, title TEXT, content TEXT NOT NULL);")
-original_index = open('index.html', 'r', encoding="utf8").read()
+original_index = open('index_empty.html', 'r', encoding="utf8").read()
 
 def get_all():
     cursor = run_query(conn, "SELECT * FROM note")

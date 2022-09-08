@@ -18,7 +18,6 @@ function Create() {
     content: document.getElementById('content').value
   });
   xhr.send(data);
-  delay(1000).then(() => {location.reload();});
 }
 
 document.addEventListener("DOMContentLoaded", function () {
