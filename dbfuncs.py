@@ -31,7 +31,7 @@ def constructIndex():
     html_notes = ''
     note_example = open('note_example.html', 'r', encoding="utf8").read()
     for note in notes:
-        html_notes += note_example.replace('titulo', note.title).replace('detalhes', note.content)
+        html_notes += note_example.replace('titulo', note.title).replace('detalhes', note.content).replace('ID', str(note.id))
         html_notes += '\n'
     index = original_index.replace('<!-- card-container -->', html_notes)
     open('index.html', 'w', encoding="utf8").write(index)
@@ -55,13 +55,13 @@ def create():
 
 @app.route('/edit', methods=['POST'])
 def edit():
-    update(Note(id=flask.request.form['id'], title=flask.request.form['title'], content=flask.request.form['content']))
+    update(Note(id=flask.request.json['id'], title=flask.request.json['title'], content=flask.request.json['content']))
     constructIndex()
     return 'ok'
 
 @app.route('/trash', methods=['POST'])
 def trash():
-    delete(flask.request.form['id'])
+    delete(flask.request.json['id'])
     constructIndex()
     return 'ok'
 

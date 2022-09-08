@@ -20,6 +20,17 @@ function Create() {
   xhr.send(data);
 }
 
+function Trash() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", 'http://127.0.0.1:80/trash');
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  const data = JSON.stringify({
+    id: parseInt(event.target.parentElement.id)
+  });
+  xhr.send(data);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let textareas = document.getElementsByClassName("autoresize");
   for (let i = 0; i < textareas.length; i++) {
