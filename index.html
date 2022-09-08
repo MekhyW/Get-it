@@ -25,99 +25,25 @@
     </div>
 
     <main class="container">
-      <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
       <form class="form-card">
         <input
+          id="title"
           class="form-card-title"
           type="text"
           name="titulo"
           placeholder="Title"
         />
         <textarea
+          id="content"
           class="autoresize"
           name="detalhes"
           placeholder="Enter content..."
         ></textarea>
-        <button class="btn" type="submit">Create</button>
+        <button name="create" class="btn" type="submit" onClick="Create()">Create</button>
       </form>
 
       <div class="card-container">
-        <div class="card">
-          <h3 class="card-title">Noodles recipe</h3>
-          <div class="card-content">
-            <p>
-              Hit it with a hammer before opening the package. mix the seasoning,
-              put it in a bowl and enjoy your snack :)
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Sweet bread</h3>
-          <div class="card-content">
-            <p>Open the bread and put your favorite powdered juice.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Ice cream with milk crystals</h3>
-          <div class="card-content">
-            <p>
-              Serve your favorite ice cream in a bowl and pour milk on top.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Natural yogurt</h3>
-          <div class="card-content">
-            <p>
-              Leave the milk out of the fridge (this is a lie, don't do that).
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Homer Simpson</h3>
-          <div class="card-content">
-            <p>~( 8(|)</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Magic number</h3>
-          <div class="card-content">
-            <p>142857</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Foundation Series - Isaac Asimov</h3>
-          <div class="card-content">
-            <p>It's good, read it.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Banana ice cream</h3>
-          <div class="card-content">
-            <p>Put the banana in the freezer and wait.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Konami code easter eggs</h3>
-          <div class="card-content">
-            <p>Geek culture. Google it.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Google gravity</h3>
-          <div class="card-content">
-            <p>This too</p>
-          </div>
-        </div>
+        <!-- card-container -->
       </div>
     </main>
 

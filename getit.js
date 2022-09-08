@@ -4,6 +4,23 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+function Create() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", 'http://127.0.0.1:80/create');
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  const data = JSON.stringify({
+    title: document.getElementById('title').value,
+    content: document.getElementById('content').value
+  });
+  xhr.send(data);
+  delay(1000).then(() => {location.reload();});
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let textareas = document.getElementsByClassName("autoresize");
   for (let i = 0; i < textareas.length; i++) {
@@ -12,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + "px";
     }
-
     textarea.addEventListener("input", autoResize, false);
   }
 
