@@ -20,6 +20,19 @@ function Create() {
   xhr.send(data);
 }
 
+function Edit() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", 'http://127.0.0.1:80/edit');
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  const data = JSON.stringify({
+    id: parseInt(event.target.parentElement.id),
+    title: event.target.parentElement.querySelector('.card-title').innerText,
+    content: event.target.parentElement.querySelector('.card-content').innerText
+  });
+  xhr.send(data);
+}
+
 function Trash() {
   let xhr = new XMLHttpRequest();
   xhr.open("POST", 'http://127.0.0.1:80/trash');
