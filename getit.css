@@ -1,27 +1,3 @@
-/*
-Algumas informações úteis e dicas:
-  - Fontes disponíveis:
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Permanent Marker', cursive;
-  - Cores:
-    Tons de amarelo:
-      #e4fc2b
-      #e0d426
-      #f7d736
-      #e0af26
-      #fcb02b
-    Tons de cinza:
-      #2c2c2c
-      #4c4c4c
-    Cores dos cards:
-      #ead3a7
-      #9de0f5
-      #ef89ba
-      #fae890
-      #abe9c1
-  - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
- */
-
 html,
 body {
   height: 100%;
@@ -30,9 +6,6 @@ body {
   display:flex;
   flex-direction: column;
 }
-
-/* Você pode usar o CSS comentado abaixo, se ajudar */
-/* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
 
 .appbar{ 
   display:flex;
