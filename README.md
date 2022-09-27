@@ -5,4 +5,4 @@ Introduction to socket and low-level web routes, developed for the Web technolog
 
 - Frontend-only can be viewed on GitHub Pages deployment javascript of this repository
 - Backend must be executed via Python terminal
-- "Django version" folder contains an implementation built entirely on Django
+- Django version exists in another repository
