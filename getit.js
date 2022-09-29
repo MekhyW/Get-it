@@ -44,6 +44,21 @@ function Trash() {
   xhr.send(data);
 }
 
+function ListNotes() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", 'http://127.0.0.1:80/notas');
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send();
+}
+
+function Index() {
+  xhr.open("POST", 'http://127.0.0.1:80/index');
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let textareas = document.getElementsByClassName("autoresize");
   for (let i = 0; i < textareas.length; i++) {
