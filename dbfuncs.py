@@ -18,7 +18,7 @@ class Note:
 conn = sqlite3.connect('db.sqlite', check_same_thread=False)
 run_query(conn, "CREATE TABLE IF NOT EXISTS note (id INTEGER PRIMARY KEY, title TEXT, content TEXT NOT NULL);")
 original_index = open('index_empty.html', 'r', encoding="utf8").read()
-original_notes = open('notas.html', 'r', encoding="utf8").read()
+original_notes = open('notas_empty.html', 'r', encoding="utf8").read()
 
 def get_all():
     cursor = run_query(conn, "SELECT * FROM note")
@@ -37,7 +37,9 @@ def constructIndex():
     print(str(len(notes)))
     index = original_index.replace('NUMREGISTERED', str(len(notes)))
     index = index.replace('<!-- card-container -->', html_notes)
+    notes = original_notes.replace('<!-- card-container -->', html_notes)
     open('index.html', 'w', encoding="utf8").write(index)
+    open('notas.html', 'w', encoding="utf8").write(notes)
 
 def add(note):
     run_query(conn, "INSERT INTO note (title, content) VALUES ('{}', '{}')".format(note.title, note.content))
@@ -65,19 +67,6 @@ def edit():
 @app.route('/trash', methods=['POST'])
 def trash():
     delete(flask.request.json['id'])
-    constructIndex()
-    return 'ok'
-
-@app.route('/notas', methods=['POST'])
-def notas():
-    lista = ['<li>'+note.title+'</li>' for note in get_all()]
-    notas = original_notes.replace('<!-- card-list -->', str(lista))
-    open('notas.html', 'w', encoding="utf8").write(str(notas))
-    open('index.html', 'w', encoding="utf8").write(str(notas))
-    return 'ok'
-
-@app.route('/index', methods=['POST'])
-def index():
     constructIndex()
     return 'ok'
 
